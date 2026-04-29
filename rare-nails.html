@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rare Nails — Heimstudio Balsthal</title>
+<meta name="description" content="Rare Nails — Maniküre und Gel-Nägel im Heimstudio Balsthal. Online Termin buchen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #faf6f2;
+  --bg-warm: #f3ebe2;
+  --bg-deep: #e8dcd0;
+  --ink: #2a1f1a;
+  --ink-soft: #6b5347;
+  --rose: #d4a5a0;
+  --rose-deep: #b8857f;
+  --blush: #f5dcd4;
+  --cream: #fdf6ef;
+  --gold: #c9a876;
+  --line: rgba(42, 31, 26, 0.12);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+::selection { background: var(--rose); color: var(--cream); }
+
+.serif { font-family: 'Cormorant Garamond', serif; }
+.italic { font-style: italic; }
+
+/* Grain overlay */
+.grain {
+  position: fixed; inset: 0; pointer-events: none; z-index: 100;
+  opacity: 0.5; mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.07'/%3E%3C/svg%3E");
+}
+
+/* === NAVIGATION === */
+nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  padding: 20px 48px;
+  display: flex; justify-content: space-between; align-items: center;
+  z-index: 50;
+  background: rgba(250, 246, 242, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 26px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.nav-logo .dot { color: var(--rose-deep); }
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 400;
+  transition: color 0.3s;
+  position: relative;
+}
+
+.nav-links a:hover { color: var(--rose-deep); }
+
+.nav-cta {
+  background: var(--ink);
+  color: var(--cream);
+  padding: 12px 24px;
+  text-decoration: none;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+
+.nav-cta:hover { background: var(--rose-deep); }
+
+.menu-btn { display: none; background: none; border: none; font-size: 24px; cursor: pointer; color: var(--ink); }
+
+/* === HERO === */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  padding: 120px 48px 80px;
+  gap: 60px;
+  position: relative;
+  background:
+    radial-gradient(ellipse at top right, var(--blush) 0%, transparent 60%),
+    radial-gradient(ellipse at bottom left, var(--bg-warm) 0%, transparent 70%),
+    var(--bg);
+}
+
+.hero-text { position: relative; z-index: 2; }
+
+.hero-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--rose-deep);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-eyebrow::before {
+  content: "";
+  width: 32px;
+  height: 1px;
+  background: var(--rose-deep);
+}
+
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(56px, 9vw, 130px);
+  font-weight: 300;
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  margin-bottom: 32px;
+  color: var(--ink);
+}
+
+h1 .italic-word {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--rose-deep);
+}
+
+.hero-desc {
+  font-size: 18px;
+  color: var(--ink-soft);
+  max-width: 460px;
+  margin-bottom: 40px;
+  line-height: 1.7;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 16px 32px;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+.btn-primary {
+  background: var(--ink);
+  color: var(--cream);
+}
+
+.btn-primary:hover {
+  background: var(--rose-deep);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--ink);
+}
+
+.btn-secondary:hover {
+  background: var(--ink);
+  color: var(--cream);
+}
+
+.hero-visual {
+  position: relative;
+  height: 70vh;
+  min-height: 500px;
+}
+
+.hero-card {
+  position: absolute;
+  background: var(--cream);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px -20px rgba(42, 31, 26, 0.25);
+}
+
+.hero-card-1 {
+  width: 65%;
+  height: 75%;
+  top: 0;
+  right: 10%;
+  transform: rotate(2deg);
+  background: linear-gradient(135deg, var(--blush) 0%, var(--rose) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 200px;
+  color: rgba(255,255,255,0.35);
+  font-style: italic;
+}
+
+.hero-card-2 {
+  width: 50%;
+  height: 60%;
+  bottom: 5%;
+  left: 0;
+  transform: rotate(-3deg);
+  background: linear-gradient(135deg, var(--cream) 0%, var(--bg-warm) 100%);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-tag {
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 32px;
+  line-height: 1;
+  color: var(--ink);
+}
+
+.card-meta {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--rose-deep);
+}
+
+.hero-stamp {
+  position: absolute;
+  top: 8%;
+  left: -2%;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 14px;
+  text-align: center;
+  line-height: 1.1;
+  transform: rotate(-15deg);
+  z-index: 3;
+  padding: 8px;
+}
+
+/* === MARQUEE === */
+.marquee {
+  background: var(--ink);
+  color: var(--cream);
+  padding: 18px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.marquee-track {
+  display: inline-block;
+  animation: scroll 40s linear infinite;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 22px;
+  letter-spacing: 0.05em;
+}
+
+.marquee-track span {
+  margin: 0 30px;
+  color: var(--rose);
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* === SECTIONS === */
+section {
+  padding: 100px 48px;
+  position: relative;
+}
+
+.section-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--rose-deep);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-eyebrow::before {
+  content: "•";
+  color: var(--rose-deep);
+}
+
+h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+  color: var(--ink);
+}
+
+h2 .italic-word { font-style: italic; color: var(--rose-deep); font-weight: 400; }
+
+.section-desc {
+  font-size: 17px;
+  color: var(--ink-soft);
+  max-width: 540px;
+  line-height: 1.7;
+  margin-bottom: 60px;
+}
+
+/* === ABOUT === */
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  background: var(--bg-warm);
+}
+
+.about-image {
+  height: 600px;
+  background: linear-gradient(135deg, var(--blush), var(--rose));
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-image::before {
+  content: "RN";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 280px;
+  color: rgba(255,255,255,0.25);
+}
+
+.about-image::after {
+  content: "Bild folgt";
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--cream);
+  background: rgba(42, 31, 26, 0.5);
+  padding: 8px 16px;
+}
+
+.about-content h2 { margin-bottom: 32px; }
+
+.about-content p {
+  font-size: 17px;
+  color: var(--ink-soft);
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+.about-content p .accent {
+  color: var(--rose-deep);
+  font-style: italic;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15em;
+}
+
+/* === SERVICES & PRICES === */
+.services {
+  background: var(--bg);
+}
+
+.services-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  margin-bottom: 80px;
+  align-items: end;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  background: var(--ink);
+  border: 1px solid var(--ink);
+}
+
+.service-card {
+  background: var(--cream);
+  padding: 60px 48px;
+  position: relative;
+  transition: all 0.4s;
+}
+
+.service-card:hover {
+  background: var(--blush);
+}
+
+.service-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--rose-deep);
+  margin-bottom: 12px;
+}
+
+.service-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 44px;
+  font-weight: 400;
+  line-height: 1;
+  margin-bottom: 24px;
+  color: var(--ink);
+}
+
+.service-name .italic { font-style: italic; }
+
+.service-desc {
+  font-size: 15px;
+  color: var(--ink-soft);
+  margin-bottom: 36px;
+  line-height: 1.7;
+  max-width: 380px;
+}
+
+.service-price {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.price-amount {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 56px;
+  font-weight: 300;
+  line-height: 1;
+  color: var(--ink);
+}
+
+.price-currency {
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.service-tag {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--rose-deep);
+  background: var(--bg);
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+}
+
+/* === PORTFOLIO === */
+.portfolio {
+  background: var(--cream);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 200px;
+  gap: 12px;
+}
+
+.gallery-tile {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  background: linear-gradient(135deg, var(--blush), var(--rose));
+  cursor: pointer;
+  transition: transform 0.4s;
+}
+
+.gallery-tile:hover { transform: scale(1.02); }
+
+.gallery-tile.tall { grid-row: span 2; }
+.gallery-tile.wide { grid-column: span 2; }
+
+.gallery-tile::before {
+  content: attr(data-num);
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 80px;
+  color: rgba(255,255,255,0.4);
+}
+
+.gallery-tile.var-1 { background: linear-gradient(135deg, #f5dcd4, #d4a5a0); }
+.gallery-tile.var-2 { background: linear-gradient(135deg, #e8dcd0, #c9a876); }
+.gallery-tile.var-3 { background: linear-gradient(135deg, #fdf6ef, #f3ebe2); }
+.gallery-tile.var-4 { background: linear-gradient(135deg, #d4a5a0, #b8857f); }
+.gallery-tile.var-5 { background: linear-gradient(135deg, #e8dcd0, #d4a5a0); }
+.gallery-tile.var-6 { background: linear-gradient(135deg, #f5dcd4, #c9a876); }
+
+.portfolio-note {
+  text-align: center;
+  margin-top: 60px;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 22px;
+  color: var(--ink-soft);
+}
+
+.portfolio-note a {
+  color: var(--rose-deep);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+/* === AVAILABILITY === */
+.availability {
+  background: var(--bg-warm);
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.schedule-list {
+  list-style: none;
+}
+
+.schedule-list li {
+  display: grid;
+  grid-template-columns: 140px 1fr auto;
+  gap: 24px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+  align-items: center;
+}
+
+.day {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 24px;
+  color: var(--ink);
+}
+
+.time {
+  font-size: 14px;
+  color: var(--ink-soft);
+  letter-spacing: 0.05em;
+}
+
+.dot-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--rose-deep);
+}
+
+/* === BOOKING === */
+.booking {
+  background: var(--ink);
+  color: var(--cream);
+  padding: 120px 48px;
+}
+
+.booking h2 { color: var(--cream); }
+.booking h2 .italic-word { color: var(--rose); }
+
+.booking-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 80px;
+  align-items: start;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.booking-info p {
+  color: rgba(253, 246, 239, 0.7);
+  font-size: 16px;
+  margin-bottom: 32px;
+  max-width: 380px;
+  line-height: 1.7;
+}
+
+.info-block {
+  padding: 20px 0;
+  border-top: 1px solid rgba(253, 246, 239, 0.15);
+}
+
+.info-block:last-of-type { border-bottom: 1px solid rgba(253, 246, 239, 0.15); }
+
+.info-label {
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-bottom: 6px;
+}
+
+.info-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 22px;
+  color: var(--cream);
+}
+
+/* Form */
+.booking-form {
+  background: rgba(253, 246, 239, 0.04);
+  padding: 48px;
+  border: 1px solid rgba(253, 246, 239, 0.1);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.form-grid.full { grid-template-columns: 1fr; }
+
+.field { display: flex; flex-direction: column; }
+
+.field label {
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-bottom: 10px;
+}
+
+.field input,
+.field select,
+.field textarea {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(253, 246, 239, 0.25);
+  padding: 12px 0;
+  color: var(--cream);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 400;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: rgba(253, 246, 239, 0.35);
+  font-style: italic;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--rose);
+}
+
+.field select {
+  appearance: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23d4a5a0' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 4px center;
+}
+
+.field select option {
+  background: var(--ink);
+  color: var(--cream);
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 80px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+}
+
+.btn-submit {
+  width: 100%;
+  background: var(--rose-deep);
+  color: var(--cream);
+  border: none;
+  padding: 20px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 24px;
+  transition: all 0.3s;
+}
+
+.btn-submit:hover {
+  background: var(--cream);
+  color: var(--ink);
+}
+
+.form-note {
+  font-size: 11px;
+  color: rgba(253, 246, 239, 0.5);
+  margin-top: 16px;
+  text-align: center;
+  font-style: italic;
+}
+
+.success-msg {
+  display: none;
+  background: rgba(212, 165, 160, 0.15);
+  border: 1px solid var(--rose);
+  padding: 24px;
+  text-align: center;
+  color: var(--cream);
+  margin-top: 24px;
+}
+
+.success-msg.show { display: block; }
+
+.success-msg .serif {
+  font-size: 24px;
+  font-style: italic;
+  margin-bottom: 8px;
+  color: var(--rose);
+}
+
+/* === FOOTER === */
+footer {
+  background: var(--bg-deep);
+  padding: 80px 48px 32px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 60px;
+}
+
+.footer-brand-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.footer-tagline {
+  font-size: 14px;
+  color: var(--ink-soft);
+  max-width: 280px;
+  line-height: 1.7;
+}
+
+.footer-col h4 {
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: var(--rose-deep);
+  font-weight: 500;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col li {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: var(--ink-soft);
+}
+
+.footer-col a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-col a:hover { color: var(--rose-deep); }
+
+.footer-bottom {
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+  nav { padding: 16px 24px; }
+  .nav-links { display: none; }
+  .menu-btn { display: block; }
+  .nav-links.mobile-open {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--cream);
+    flex-direction: column;
+    padding: 24px;
+    gap: 20px;
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-cta { padding: 10px 18px; font-size: 10px; }
+
+  section { padding: 60px 24px; }
+  .hero { grid-template-columns: 1fr; padding: 100px 24px 60px; gap: 40px; min-height: auto; }
+  .hero-visual { height: 50vh; min-height: 350px; }
+  .about, .availability, .services-header, .booking-grid { grid-template-columns: 1fr; gap: 40px; }
+  .about-image { height: 400px; }
+  .service-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .booking { padding: 60px 24px; }
+  .booking-form { padding: 32px 24px; }
+  .form-grid { grid-template-columns: 1fr; gap: 16px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; gap: 8px; }
+  .schedule-list li { grid-template-columns: 100px 1fr auto; gap: 12px; }
+  .day { font-size: 18px; }
+  footer { padding: 60px 24px 24px; }
+}
+
+@media (max-width: 500px) {
+  .footer-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 180px; }
+  .gallery-tile.wide, .gallery-tile.tall { grid-column: span 1; grid-row: span 1; }
+  .price-amount { font-size: 44px; }
+  .service-name { font-size: 32px; }
+}
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Rare<span class="dot">·</span>Nails</div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">Über uns</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#availability">Verfügbarkeit</a></li>
+  </ul>
+  <a href="#booking" class="nav-cta">Termin buchen</a>
+  <button class="menu-btn" id="menuBtn">☰</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <div class="hero-eyebrow">Heimstudio · Balsthal 4710</div>
+    <h1>Nägel, die <span class="italic-word">selten</span> schön sind.</h1>
+    <p class="hero-desc">
+      Maniküre und Gel-Nägel im persönlichen Heimstudio.
+      Sorgfältig, ruhig, mit Liebe zum Detail. Buche deinen Termin in wenigen Klicks.
+    </p>
+    <div class="hero-buttons">
+      <a href="#booking" class="btn btn-primary">Termin buchen →</a>
+      <a href="#services" class="btn btn-secondary">Services ansehen</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-stamp">By Appointment Only</div>
+    <div class="hero-card hero-card-1">R</div>
+    <div class="hero-card hero-card-2">
+      <div class="card-tag">Studio · 2026</div>
+      <div>
+        <div class="card-title">Soft<br>Pastels</div>
+      </div>
+      <div class="card-meta">Balsthal · CH</div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    Maniküre <span>•</span> Gel-Nägel <span>•</span> Heimstudio Balsthal <span>•</span> Termin nach Vereinbarung <span>•</span>
+    Maniküre <span>•</span> Gel-Nägel <span>•</span> Heimstudio Balsthal <span>•</span> Termin nach Vereinbarung <span>•</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-image"></div>
+  <div class="about-content">
+    <div class="section-eyebrow">Über das Studio</div>
+    <h2>Klein, fein und <span class="italic-word">persönlich.</span></h2>
+    <p>
+      <span class="accent">Rare Nails</span> ist ein privates Heimstudio in Balsthal. Hier bekommst du keine Massenabfertigung,
+      sondern Zeit, Ruhe und Aufmerksamkeit für deine Hände.
+    </p>
+    <p>
+      Jeder Termin ist ein kleiner Moment für dich — ohne Hektik, ohne Stress.
+      Nur du, schöne Musik und am Ende Nägel, auf die du dich jedes Mal aufs Neue freust.
+    </p>
+    <p>
+      Die genaue Adresse erhältst du nach deiner Buchungsbestätigung per Mail.
+    </p>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-header">
+    <div>
+      <div class="section-eyebrow">Services & Preise</div>
+      <h2>Was du bei mir <span class="italic-word">bekommst.</span></h2>
+    </div>
+    <p class="section-desc">
+      Zwei Services, beide mit voller Aufmerksamkeit. Faire Preise, ehrliche Arbeit, sichtbares Ergebnis.
+    </p>
+  </div>
+
+  <div class="service-grid">
+    <div class="service-card">
+      <div class="service-tag">Klassisch</div>
+      <div class="service-num">— 01 / Service</div>
+      <div class="service-name">Mani<span class="italic">küre</span></div>
+      <p class="service-desc">
+        Klassische Maniküre mit Nagelpflege, Formgebung, Nagelhautbehandlung und Politur.
+        Für gepflegte, natürlich schöne Hände.
+      </p>
+      <div class="service-price">
+        <span class="price-amount">39.90</span>
+        <span class="price-currency">CHF</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-tag">Beliebt</div>
+      <div class="service-num">— 02 / Service</div>
+      <div class="service-name">Gel<span class="italic">-Nägel</span></div>
+      <p class="service-desc">
+        Langhaltende Gel-Nägel in deiner Wunschfarbe. Stabil, glänzend und bis zu 4 Wochen haltbar.
+        Inklusive Vorbereitung und Pflege.
+      </p>
+      <div class="service-price">
+        <span class="price-amount">79.90</span>
+        <span class="price-currency">CHF</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="portfolio" id="portfolio">
+  <div style="text-align: center; max-width: 700px; margin: 0 auto 60px;">
+    <div class="section-eyebrow" style="justify-content: center;">Portfolio</div>
+    <h2>Eine Auswahl der <span class="italic-word">letzten Looks.</span></h2>
+    <p class="section-desc" style="margin: 24px auto 0;">
+      Jeder Look ist anders, jede Hand bekommt ihre eigene Stimmung. Folg mir auf Instagram für mehr.
+    </p>
+  </div>
+
+  <div class="gallery-grid">
+    <div class="gallery-tile var-1 tall" data-num="01"></div>
+    <div class="gallery-tile var-2" data-num="02"></div>
+    <div class="gallery-tile var-3" data-num="03"></div>
+    <div class="gallery-tile var-4 wide" data-num="04"></div>
+    <div class="gallery-tile var-5" data-num="05"></div>
+    <div class="gallery-tile var-6" data-num="06"></div>
+    <div class="gallery-tile var-1" data-num="07"></div>
+    <div class="gallery-tile var-3 tall" data-num="08"></div>
+    <div class="gallery-tile var-2" data-num="09"></div>
+    <div class="gallery-tile var-4" data-num="10"></div>
+    <div class="gallery-tile var-5 wide" data-num="11"></div>
+  </div>
+
+  <p class="portfolio-note">
+    Mehr Looks auf <a href="#" id="instaLink">@rare.nails</a>
+  </p>
+</section>
+
+<!-- AVAILABILITY -->
+<section class="availability" id="availability">
+  <div>
+    <div class="section-eyebrow">Verfügbarkeit</div>
+    <h2>Wann ich <span class="italic-word">für dich da bin.</span></h2>
+    <p class="section-desc" style="margin-top: 24px;">
+      Termine flexibel nach Vereinbarung. Ein Tag pro Woche ist auch tagsüber möglich — gib bei der Buchung einfach deinen Wunschzeitraum an.
+    </p>
+  </div>
+  <ul class="schedule-list">
+    <li>
+      <div class="day">Montag</div>
+      <div class="time">ab 19:30 Uhr</div>
+      <div class="dot-indicator"></div>
+    </li>
+    <li>
+      <div class="day">Dienstag</div>
+      <div class="time">ab 19:30 Uhr</div>
+      <div class="dot-indicator"></div>
+    </li>
+    <li>
+      <div class="day">Mittwoch</div>
+      <div class="time">ab 19:30 Uhr</div>
+      <div class="dot-indicator"></div>
+    </li>
+    <li>
+      <div class="day">Donnerstag</div>
+      <div class="time">ab 18:00 Uhr</div>
+      <div class="dot-indicator"></div>
+    </li>
+    <li>
+      <div class="day">Freitag</div>
+      <div class="time">ab 19:30 Uhr</div>
+      <div class="dot-indicator"></div>
+    </li>
+    <li>
+      <div class="day">Samstag</div>
+      <div class="time">abends nach Vereinbarung</div>
+      <div class="dot-indicator"></div>
+    </li>
+    <li>
+      <div class="day">Sonntag</div>
+      <div class="time">ganztägig nach Vereinbarung</div>
+      <div class="dot-indicator"></div>
+    </li>
+    <li style="border-top: 2px solid var(--rose-deep); margin-top: 16px;">
+      <div class="day" style="color: var(--rose-deep);">Bonus</div>
+      <div class="time"><em>Ein Wochentag pro Woche auch tagsüber möglich (variabel)</em></div>
+      <div class="dot-indicator"></div>
+    </li>
+  </ul>
+</section>
+
+<!-- BOOKING -->
+<section class="booking" id="booking">
+  <div class="booking-grid">
+    <div class="booking-info">
+      <div class="section-eyebrow">Termin buchen</div>
+      <h2>Schreib mir <span class="italic-word">dein Wunschdatum.</span></h2>
+      <p style="margin-top: 24px;">
+        Fülle das Formular aus, ich melde mich innerhalb von 24 Stunden mit der Bestätigung und der genauen Adresse.
+      </p>
+
+      <div class="info-block">
+        <div class="info-label">Standort</div>
+        <div class="info-value">Balsthal · 4710</div>
+      </div>
+      <div class="info-block">
+        <div class="info-label">Telefon · WhatsApp</div>
+        <div class="info-value">+41 XX XXX XX XX</div>
+      </div>
+      <div class="info-block">
+        <div class="info-label">Instagram</div>
+        <div class="info-value">@rare.nails</div>
+      </div>
+      <div class="info-block">
+        <div class="info-label">E-Mail</div>
+        <div class="info-value">hallo@rarenails.ch</div>
+      </div>
+    </div>
+
+    <form class="booking-form" id="bookingForm" action="https://formsubmit.co/DEINE-EMAIL@example.com" method="POST">
+      <!-- FormSubmit Konfiguration -->
+      <input type="hidden" name="_subject" value="Neue Terminanfrage — Rare Nails">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="#booking">
+
+      <div class="form-grid">
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="Name" required placeholder="Vor- und Nachname">
+        </div>
+        <div class="field">
+          <label for="phone">Telefon</label>
+          <input type="tel" id="phone" name="Telefon" required placeholder="+41 79 ...">
+        </div>
+      </div>
+
+      <div class="form-grid full">
+        <div class="field">
+          <label for="email">E-Mail</label>
+          <input type="email" id="email" name="Email" required placeholder="deine@email.ch">
+        </div>
+      </div>
+
+      <div class="form-grid">
+        <div class="field">
+          <label for="service">Service</label>
+          <select id="service" name="Service" required>
+            <option value="">— wählen —</option>
+            <option value="Maniküre — 39.90 CHF">Maniküre · 39.90 CHF</option>
+            <option value="Gel-Nägel — 79.90 CHF">Gel-Nägel · 79.90 CHF</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="date">Wunschdatum</label>
+          <input type="date" id="date" name="Wunschdatum" required>
+        </div>
+      </div>
+
+      <div class="form-grid">
+        <div class="field">
+          <label for="time">Wunschzeit</label>
+          <input type="time" id="time" name="Wunschzeit" required>
+        </div>
+        <div class="field">
+          <label for="alternative">Alternative</label>
+          <input type="text" id="alternative" name="Alternative" placeholder="z.B. Sa Vormittag">
+        </div>
+      </div>
+
+      <div class="form-grid full">
+        <div class="field">
+          <label for="message">Nachricht (optional)</label>
+          <textarea id="message" name="Nachricht" placeholder="Wünsche, Designs, Inspirationen ..."></textarea>
+        </div>
+      </div>
+
+      <button type="submit" class="btn-submit">Anfrage senden →</button>
+      <p class="form-note">Du erhältst innerhalb von 24h eine Antwort mit Bestätigung und Adresse.</p>
+
+      <div class="success-msg" id="successMsg">
+        <div class="serif">Danke dir!</div>
+        <div>Deine Anfrage ist angekommen. Ich melde mich bald mit der Bestätigung.</div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-name">Rare<span style="color: var(--rose-deep)">·</span>Nails</div>
+      <p class="footer-tagline">
+        Privates Heimstudio in Balsthal. Maniküre und Gel-Nägel mit Zeit und Ruhe.
+      </p>
+    </div>
+    <div class="footer-col">
+      <h4>Studio</h4>
+      <ul>
+        <li><a href="#about">Über uns</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#availability">Verfügbarkeit</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <ul>
+        <li>Balsthal · 4710</li>
+        <li>+41 XX XXX XX XX</li>
+        <li>hallo@rarenails.ch</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Folge mir</h4>
+      <ul>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">TikTok</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 Rare Nails · Made with love in Balsthal</div>
+    <div>Impressum · Datenschutz</div>
+  </div>
+</footer>
+
+<script>
+// Mobile menu
+document.getElementById('menuBtn').addEventListener('click', () => {
+  document.getElementById('navLinks').classList.toggle('mobile-open');
+});
+
+// Close mobile menu on link click
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('navLinks').classList.remove('mobile-open');
+  });
+});
+
+// Set min date to today
+const dateInput = document.getElementById('date');
+const today = new Date().toISOString().split('T')[0];
+dateInput.setAttribute('min', today);
+
+// Form handling — show success message after submit
+// Note: With FormSubmit.co, the form will submit normally and redirect.
+// For local testing without backend, we can intercept and show success.
+const form = document.getElementById('bookingForm');
+const successMsg = document.getElementById('successMsg');
+
+// Optional: prevent submission for demo / show success locally
+// Comment this block out once FormSubmit is configured with real email
+form.addEventListener('submit', function(e) {
+  // If form action still contains placeholder, prevent and show demo
+  if (form.action.includes('DEINE-EMAIL')) {
+    e.preventDefault();
+    successMsg.classList.add('show');
+    successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setTimeout(() => {
+      form.reset();
+    }, 100);
+  }
+});
+</script>
+</body>
+</html>
